@@ -20,6 +20,18 @@ const arrowLeft = document.querySelector(".arrow_left")
 const arrowRight = document.querySelector(".arrow_right")
 const imageBanner = document.querySelector(".banner-img")
 const texte = document.querySelector(".banner-txt");
+const tagLine = document.querySelector("#banner p");
+
+
+// Fonction changement images texte
+function NextSlides(){
+	
+imageBanner.src = `./assets/images/slideshow/${slides[i].image}`;
+tagLine.innerHTML = slides[i].tagLine;
+
+}
+
+
 
 let i = 0;
 // flèche gauche 
@@ -30,8 +42,7 @@ arrowLeft.addEventListener("click", () => {
 	}
 
 // Mise à jour de l'image et du texte
-imageBanner.src = "assets/images/slideshow/" + slides[i].image;
-texte.innerHTML = slides[i].tagLine;
+	NextSlides();
 });
 
 // flèche droite
@@ -42,6 +53,5 @@ arrowRight.addEventListener("click", () => {
 	}
 
 // Mise à jour de l'image et du texte
-imageBanner.src = "assets/images/slideshow/" + slides[i].image;
-texte.innerHTML = slides[i].tagLine;
+	NextSlides();
 });
