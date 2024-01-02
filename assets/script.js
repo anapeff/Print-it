@@ -21,6 +21,7 @@ const arrowRight = document.querySelector(".arrow_right")
 const imageBanner = document.querySelector(".banner-img")
 const texte = document.querySelector(".banner-txt");
 const tagLine = document.querySelector("#banner p");
+const dots = document.querySelectorAll('.dot');
 
 
 // Fonction changement images texte
@@ -31,8 +32,11 @@ tagLine.innerHTML = slides[i].tagLine;
 
 }
 
-
-
+// Fonction changement des points
+function ChangeDots(){
+	dots.forEach(dot => dot.classList.remove('dot_selected'));
+	dots[i].classList.add('dot_selected');
+}
 let i = 0;
 // flèche gauche 
 arrowLeft.addEventListener("click", () => {
@@ -43,15 +47,22 @@ arrowLeft.addEventListener("click", () => {
 
 // Mise à jour de l'image et du texte
 	NextSlides();
+
+	// Mise à jour des dots
+	ChangeDots();
 });
 
 // flèche droite
 arrowRight.addEventListener("click", () => {
 	i++;
-	if (i > slides.length) {
+	if (i == slides.length) {
 		i=0;
 	}
 
 // Mise à jour de l'image et du texte
 	NextSlides();
+
+
+		// Mise à jour des dots
+	ChangeDots();
 });
