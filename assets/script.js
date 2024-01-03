@@ -18,8 +18,7 @@ const slides = [
 ]
 const arrowLeft = document.querySelector(".arrow_left")
 const arrowRight = document.querySelector(".arrow_right")
-const imageBanner = document.querySelector(".banner-img")
-const texte = document.querySelector(".banner-txt");
+const image = document.querySelector(".banner-img")
 const tagLine = document.querySelector("#banner p");
 const dots = document.querySelectorAll('.dot');
 
@@ -27,7 +26,7 @@ const dots = document.querySelectorAll('.dot');
 // Fonction changement images texte
 function NextSlides(){
 	
-imageBanner.src = `./assets/images/slideshow/${slides[i].image}`;
+image.src = `./assets/images/slideshow/${slides[i].image}`;
 tagLine.innerHTML = slides[i].tagLine;
 
 }
